@@ -1,5 +1,5 @@
 SELECT
-COUNT(InvoiceId) AS InvoiceTotals,
-BillingCountry AS Country
+BillingCountry AS Country,
+COUNT(InvoiceId) AS InvoiceTotals
 FROM Invoice
 GROUP BY BillingCountry;
