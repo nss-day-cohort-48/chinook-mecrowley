@@ -1,6 +1,6 @@
 SELECT
 MAX(EmployeeTotalSales.Total) AS TopSales,
-EmployeeTotalSales.FullName
+EmployeeTotalSales.FullName SalesAgent
 FROM (SELECT
         Employee.FirstName || ' ' || Employee.LastName FullName,
         ROUND(SUM(Invoice.Total), 2) Total

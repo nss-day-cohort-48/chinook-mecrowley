@@ -1,11 +1,12 @@
 SELECT
-Track.Name Track,
+MediaType.Name MediaType,
 COUNT(InvoiceLine.TrackId) TracksSold
-FROM Track
+FROM MediaType
+JOIN Track
+    ON Track.MediaTypeId = MediaType.MediaTypeId
 JOIN InvoiceLine
     ON InvoiceLine.TrackId = Track.TrackId
 JOIN Invoice
     ON Invoice.InvoiceId = InvoiceLine.InvoiceId
-GROUP BY TrackName
-ORDER BY TracksSold DESC
-LIMIT 5;
+GROUP BY MediaType
+ORDER BY TracksSold DESC;
