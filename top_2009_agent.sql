@@ -3,7 +3,7 @@ MAX(EmployeeTotalSales2009.Total) AS TopSales_2009,
 EmployeeTotalSales2009.FullName
 FROM (SELECT
         Employee.FirstName || ' ' || Employee.LastName FullName,
-        SUM(Invoice.Total) Total
+        ROUND(SUM(Invoice.Total), 2) Total
     FROM Employee
     JOIN Customer
         ON Customer.SupportRepId = Employee.EmployeeId
